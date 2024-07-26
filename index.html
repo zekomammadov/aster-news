@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aster News</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body,
+        body * {
+            font-family: "Roboto", sans-serif;
+        }
+        .swiper-pagination-bullet {
+            width: 2px;
+            height: 2px;
+        }
+        .swiper-pagination-bullet-active {
+            width: 4px;
+            height: 4px;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F4F9F8]">
+    <div class="grid grid-cols-[260px_minmax(700px,_1fr)_365px]">
+        <aside class=" h-screen pr-[15px] flex flex-col justify-between sticky top-0">
+            <div>
+                <div class="logo flex items-center gap-[15px] px-[31px] pt-[21px] pb-[28px] relative ">
+                    <a href="/index.html" class="absolute inset-0"></a>
+                    <figure class="h-[35px]">
+                        <img src="assets/img/logo.png" class="size-full" alt="">
+                    </figure>
+                    <h1 class="text-[18px] font-bold leading-[21px] text-[#0768B5]">Aster News</h1>
+                </div>
+                <nav>
+                    <a href="#"
+                        class="px-[15px] inline-flex bg-[#2F9FF81A] rounded-[0_37px_37px_0] h-[50px] w-full items-center relative after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px]">
+                        <img src="assets/img/home.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[#2F9FF8] font-bold text-[15px] ">Top Stories</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/globe.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Around the World</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/activity.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Health</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all border-t-[1px] border-b-[1px] my-[20px]">
+                        <img src="assets/img/shield.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Covid 19</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/play-circle.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Entertainment</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/award.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Sports</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/message-circle.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Discussion</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/bell.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">Notification</span>
+                    </a>
+                    <a href="#"
+                        class="px-[15px] inline-flex h-[50px] w-full items-center relative after:opacity-0 after:absolute after:bg-[#2F9FF8] after:rounded after:size-[6px] hover:bg-[#2F9FF81A] hover:rounded-[0_37px_37px_0] hover:after:opacity-100 transition-all">
+                        <img src="assets/img/settings.svg" class="size-[24px] ml-[18px] mr-[22px]" alt="">
+                        <span class="text-[15px] ">News Feed Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="p-[20px] m-[16px] mr-0 bg-[#2F9FF8] flex flex-col rounded-[4px]">
+                <div class="flex items-center gap-[16px] mb-[12px]">
+                    <figure class="size-[24px]">
+                        <img src="assets/img/gift.svg" class="size-full" alt="">
+                    </figure>
+                    <h3 class="text-white text-[15px]">Subscribe to Premium</h3>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-[30px] text-white font-bold leading-[35px] relative">$8 <span
+                                class="absolute bottom-[4px] text-[15px] leading-[17px]">/m</span></h3>
+                    </div>
+                    <button
+                        class="outline-none border-none bg-[#0768B5] px-[27px] text-white h-[38px] rounded-[4px]">Upgrade</button>
+                </div>
+            </div>
+        </aside>
+        <main class="container px-[45px]  mx-auto  mt-[15px] overflow-x-hidden">
+            <div class="grid grid-cols-[1fr_260px] gap-[20px]">
+                <div class="h-[46px] bg-[#ECF5F8] rounded-[4px] flex justify-between items-center px-[12px]">
+                    <input type="text" class="bg-transparent w-full text-[15px] outline-none pr-[12px]"
+                        placeholder="Search for news.." />
+                    <img src="assets/img/search.svg" class="size-[18px]" alt="">
+                </div>
+                <div class="h-[46px] border rounded-[4px] flex items-center px-[14px] justify-between group ">
+                    <a href="#" class="text-[15px]">Latest news on <span
+                            class="text-[#2F9FF8] font-medium">Covid-19</span></a>
+                    <img src="assets/img/arrow-right.svg" class="size-[20px] group-hover:translate-x-1.5 transition-all"
+                        alt="">
+                </div>
+            </div>
+            <div class="news-content mt-[40px]">
+                <div>
+                    <h2 class="font-bold text-[20px] text-[#072D4B]">Top Stories for you</h2>
+                    <div class="categories flex gap-[10px] mt-[22px]">
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] h-[30px] px-[17px] whitespace-nowrap text-white bg-[#2F9FF8] active">All</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">Android</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">Cricket</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">iPhone</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">Google</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">Nano Technology</a>
+                        <a href="#" class="inline-flex items-center justify-center rounded-[99px] bg-white h-[30px] px-[17px] whitespace-nowrap">Mental Health</a>
+                        <figure class="relative size-[24px] text-end">
+                            <a href="#" class="absolute inset-0"></a>
+                            <img src="assets/img/more.svg" alt="">
+                        </figure>
+                    </div>
+                    <div class="grid grid-cols-2 mt-[24px] gap-[20px]">
+                        <div class="rounded-[4px] p-[20px] bg-white flex gap-[50px] col-start-1 col-end-3 min-h-[200px]">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Samsung Galaxy F22 launched in India: Price, features, other details</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B]">Samsung Galaxy F22 has been launched in India. The new smartphone has been priced in the mid-range segment. The new smartphone is powered by a MediaTek chipset and features a high refresh rate AMOLED display.</p>
+                                </div>
+                                <div class="flex items-center ">
+                                    <div class="flex items-center mr-[100px]">
+                                        <div class="author opacity-40 text-[12px]">The Mint</div>
+                                        <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                        <div class="time opacity-40 text-[12px]">15 mins ago</div>
+                                    </div>
+                                    <div class="flex gap-[25px]">
+                                        <div class="flex gap-[9px] relative">
+                                            <a href="#" class="absolute inset-0"></a>
+                                            <figure class="size-[16px]">
+                                                <img src="assets/img/share.svg" class="size-full" alt="">
+                                            </figure>
+                                            <span class="text-[12px] text-[#0768B5]">Share</span>
+                                        </div>
+                                        <div class="flex gap-[9px] relative">
+                                            <a href="#" class="absolute inset-0"></a>
+                                            <figure class="size-[16px]">
+                                                <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                            </figure>
+                                            <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="h-[130px]">
+                                <img src="assets/img/news-image.png" class="size-full object-contain" alt="">
+                            </figure>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Battlegrounds Mobile India iOS release date</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">The reason behind their disappointment is that iPhone users have been that iPhone users have been that iPhone users have been that iPhone users have been</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-1.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Sport Biz</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">42 mins ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Instagram working on ‘Exclusive Stories’ for subscribers</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">Instagram could be jumping on the paid subscription..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-2.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">The Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">52 mins ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Petrol, diesel prices -  July 6: Fuel prices unchanged after touching record high</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned..</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Radar 52</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">1 hour ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Android smartphone users alert! Remove these 9 apps now</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">Stealer trojans were spread as harmless software..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-3.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Live Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">2 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">How to install Windows 11 on almost any unsupported PC</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">Microsoft is allowing some unsupported computers..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-4.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Tech Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">3 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">This charging feature from Android phones may come to iPhone 13</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">You will always find a set of people who will say that..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-5.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Live Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">5 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-[40px]">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-[13px]">
+                            <figure class="size-[24px]">
+                                <img src="assets/img/feather.svg" class="size-full" alt="">
+                            </figure>
+                            <h3 class="font-bold text-[15px]">Creators you should follow</h3>
+                        </div>
+                        <div class="flex items-center gap-[20px]">
+                            <div class="text-[20px] opacity-20 cursor-pointer">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div class="text-[20px] cursor-pointer">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Creators flex items-center gap-[15px]">
+                        <div class="bg-white p-[12px] flex-1 flex flex-col items-center max-w-[142px]">
+                            <figure class="rounded-full size-[70px]">
+                                <img src="assets/img/profile.png" class="size-full object-cover" alt="">
+                            </figure>
+                            <h3 class="text-[#072D4B] text-[14px] leading-[24px] font-medium">Shan Teylor</h3>
+                            <p class="opacity-40 text-[12px] mb-[7px]">Tech Mint</p>
+                            <button class="inline-flex items-center justify-center w-full rounded-[4px] text-white bg-[#2F9FF8] text-[15px] h-[32px]">Follow</button>
+                        </div>
+                        <div class="bg-white p-[12px] flex-1 flex flex-col items-center max-w-[142px]">
+                            <figure class="rounded-full size-[70px]">
+                                <img src="assets/img/profile-1.png" class="size-full object-cover" alt="">
+                            </figure>
+                            <h3 class="text-[#072D4B] text-[14px] leading-[24px] font-medium">Mary Angela</h3>
+                            <p class="opacity-40 text-[12px] mb-[7px]">Live Mint</p>
+                            <button class="inline-flex items-center justify-center w-full rounded-[4px] text-white bg-[#2F9FF8] text-[15px] h-[32px]">Follow</button>
+                        </div>
+                        <div class="bg-white p-[12px] flex-1 flex flex-col items-center max-w-[142px]">
+                            <figure class="rounded-full size-[70px]">
+                                <img src="assets/img/profile-2.png" class="size-full object-cover" alt="">
+                            </figure>
+                            <h3 class="text-[#072D4B] text-[14px] leading-[24px] font-medium">Kyon Cho Chi</h3>
+                            <p class="opacity-40 text-[12px] mb-[7px]">Bizz Daily</p>
+                            <button class="inline-flex items-center justify-center w-full rounded-[4px] text-white bg-[#2F9FF8] text-[15px] h-[32px]">Follow</button>
+                        </div>
+                        <div class="bg-white p-[12px] flex-1 flex flex-col items-center max-w-[142px]">
+                            <figure class="rounded-full size-[70px]">
+                                <img src="assets/img/profile-3.png" class="size-full object-cover" alt="">
+                            </figure>
+                            <h3 class="text-[#072D4B] text-[14px] leading-[24px] font-medium">Paul Livingstone</h3>
+                            <p class="opacity-40 text-[12px] mb-[7px]">Sport Biz</p>
+                            <button class="inline-flex items-center justify-center w-full rounded-[4px] text-white bg-[#2F9FF8] text-[15px] h-[32px]">Follow</button>
+                        </div>
+                        <div class="bg-white p-[12px] flex-1 flex flex-col items-center max-w-[142px]">
+                            <figure class="rounded-full size-[70px]">
+                                <img src="assets/img/profile-4.png" class="size-full object-cover" alt="">
+                            </figure>
+                            <h3 class="text-[#072D4B] text-[14px] leading-[24px] font-medium">Sara Jay</h3>
+                            <p class="opacity-40 text-[12px] mb-[7px]">Radar 52</p>
+                            <button class="inline-flex items-center justify-center w-full rounded-[4px] text-white bg-[#2F9FF8] text-[15px] h-[32px]">Follow</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-[40px]">
+                    <div class="grid grid-cols-2 gap-[20px]">
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Petrol, diesel prices -  July 6: Fuel prices unchanged after touching record high</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned..</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Radar 52</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">1 hour ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">Android smartphone users alert! Remove these 9 apps now</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">Stealer trojans were spread as harmless software..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-3.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Live Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">2 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">How to install Windows 11 on almost any unsupported PC</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">Microsoft is allowing some unsupported computers..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-4.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Tech Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">3 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[4px] flex flex-col p-[20px] bg-white flex  min-h-[200px]">
+                            <div class="flex-1 flex justify-between gap-[20px]">
+                                <div>
+                                    <h2 class="font-medium text-[17px] text-[#072D4B]">This charging feature from Android phones may come to iPhone 13</h2>
+                                    <p class="mt-[10px] opacity-60 text-[14px] leading-[22px] text-[#072D4B] text-ellipsis  line-clamp-3">You will always find a set of people who will say that..</p>
+                                </div>
+                                <figure class="h-[130px] aspect-square">
+                                    <img src="assets/img/news-image-5.png" class="size-full object-contain" alt="">
+                                </figure>
+                            </div>
+                            <div class="flex items-center justify-between mt-[10px]">
+                                <div class="flex items-center ">
+                                    <div class="author opacity-40 text-[12px]">Live Mint</div>
+                                    <span class="inline-flex size-[2px] bg-[#2F9FF8] rounded-full opacity-40 mx-[8px]"></span>
+                                    <div class="time opacity-40 text-[12px]">5 hours ago</div>
+                                </div>
+                                <div class="flex gap-[25px]">
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/share.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Share</span>
+                                    </div>
+                                    <div class="flex gap-[9px] relative">
+                                        <a href="#" class="absolute inset-0"></a>
+                                        <figure class="size-[16px]">
+                                            <img src="assets/img/pocket.svg" class="size-full" alt="">
+                                        </figure>
+                                        <span class="text-[12px] text-[#0768B5]">Read Later</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-[54px] mb-[80px] flex justify-center">
+                        <button class="border rounded-[4px] text-[15px] h-[38px] px-[21px]">Show More</button>
+                    </div>
+                </div>
+                <footer class="border-t py-[25px] flex items-center justify-between">
+                    <div>
+                        <span class="opacity-40 text-[12px]">© Aster News, 2022</span>
+                    </div>
+                    <div class="flex gap-[40px]">
+                        <a href="#" class="opacity-40 text-[12px]">Privacy Policy</a>
+                        <a href="#" class="opacity-40 text-[12px]">Terms of Service</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+        <aside class="pt-[26px] pr-[34px] sticky top-1 h-screen">
+            <div class="user-profile flex items-center justify-end gap-[36px] mb-[95px]">
+                <div class="flex items-center gap-[13px] ">
+                    <figure class="size-[24px]">
+                        <img src="assets/img/user.svg" alt="">
+                    </figure>
+                    <span class="text-[15px] text-[#072D4B]">My Profile</span>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="bg-[#fff] shadow shadow-sm rounded-[4px] p-[15px] mb-[15px]">
+                <div class="flex items-center justify-between border-b pb-[9px]">
+                    <h3 class="text-[15px] text-[#072D4B]">Coimbatore, Tamil Nadu</h3>
+                    <img src="assets/img/crosshair.svg" class="size-[18px]" alt="">
+                </div>
+                <div class="my-[15px] flex justify-between">
+                    <div>
+                        <h3 class="text-[#072D4B] text-[15px]">Sunny</h3>
+                        <span class="text-[26px] font-bold text-[#072D4B]">31<sup>o</sup>c</span>
+                    </div>
+                    <figure class="size-[52px]">
+                        <img src="assets/img/sun.svg" class="size-full" alt="">
+                    </figure>
+                </div>
+                <div class="flex items-center gap-[23px] text-[12px]    ">
+                    <span>Celsius</span>
+                    <span class="opacity-30">Fahrenheit</span>
+                </div>
+            </div>
+            <div class="bg-[#fff] shadow shadow-sm rounded-[4px] p-[15px] mb-[15px]">
+                <div class="flex items-center gap-[12px] mb-[9px]">
+                    <figure class="size-[24px]">
+                        <img src="assets/img/feather.svg" class="size-full" alt="">
+                    </figure>
+                    <h3 class="text-[15px] text-[#072D4B]">Become a Story Writer</h3>
+                </div>
+                <div class="flex items-center gap-[25px]">
+                    <span class="opacity-60 text-[12px]">Contribute stories and start earning.</span>
+                    <button
+                        class="rounded-[4px] border border-[#2F9FF8] text-[#2F9FF8] h-[38px] px-[17px] text-[15px] whitespace-nowrap">Know
+                        More</button>
+                </div>
+            </div>
+            <div class="bg-[#fff] shadow shadow-sm rounded-[4px] p-[15px] mb-[15px] swiper mySwiper relative">
+                <div class="flex gap-[14px] items-center pb-[6px] border-b">
+                    <figure class="size-[24px]">
+                        <img src="assets/img/file-text.svg" class="size-full" alt="">
+                    </figure>
+                    <span class="text-[15px]">Quick Bytes</span>
+                </div>
+                <div class="swiper-wrapper mt-[13px]">
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                    <div class="swiper-slide h-[270px] pr-[14px] flex flex-col">
+                        <p class="text-[12px]">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.</p>
+                        <br />
+                        <p class="text-[12px]">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</p>
+                    </div>
+                </div>
+                <div class="swiper-button-next absolute bg-[#2F9FF8] size-[24px] rounded-full after:hidden right-[16px] top-[37px]">
+                    <i class="fa-solid fa-angle-right text-[8px] text-white"></i>
+                </div>
+                <div class="swiper-button-prev absolute bg-[#2F9FF8] size-[24px] rounded-full after:hidden top-[37px] left-[210px]">
+                    <i class="fa-solid fa-angle-left text-[8px] text-white"></i>
+                </div>
+                <div class="swiper-pagination flex items-center justify-center"></div>
+            </div>
+            <div class="bg-[#fff] shadow shadow-sm rounded-[4px] p-[20px] mb-[15px]">
+                <h3 class="text-[15px] text-[#072D4B] mb-[12px]">Subscribe to our newsletter</h3>
+                <input type="text" placeholder="Enter Email" class="inline-flex px-[14px] text-[15px] h-[38px] border bg-[#F4F9F8] outline-none rounded-[4px] w-full"/>
+                <button class="text-white text-[15px] bg-[#2F9FF8] h-[38px] inline-flex items-center w-full justify-center rounded-[4px] mt-[16px] hover:shadow hover:shadow-xl transition-all">Subscribe</button>
+            </div>
+        </aside>
+    </div>
+
+
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+            el: ".swiper-pagination",
+            },
+            mousewheel: true,
+            keyboard: true,
+        });
+    </script>
+</body>
+
+</html>
