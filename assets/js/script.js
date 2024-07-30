@@ -1,8 +1,51 @@
-const viewBtn = document.querySelector('#viewBtn');
-const comments = document.querySelector('.comments');
-const i = document.querySelector('i');
+import Router from "./router.js";
+import { serviceFetchNews, serviceFetchNewsView } from "./service.js";
+import { uiLoading, uiNewsItem } from "./ui.js";
 
-viewBtn.addEventListener ('click', () => {
-    comments.classList.toggle('hidden');
-    i.classList.toggle('rotate-180');
+const router = new Router();
+
+router.addRoute('home', 'home.html', async () => {
+    const newsContent = document.querySelector('#news-content');
+    const showMore = document.querySelector('#showMore');
+    
+    const fetchNews = async (page = 1) => {
+        if (page === 1) {
+            uiLoading('show');
+        }
+        const res = await serviceFetchNews(page);
+        uiLoading('hide');
+
+
+        res.data.forEach(item => {
+            newsContent.innerHTML += uiNewsItem(item);
+        });
+    }
+
+    fetchNews();
+    showMore.addEventListener('click', (e) => {
+        const page = e.target.getAttribute('data-page');
+        e.target.setAttribute('data-page', parseInt(page) + 1);
+        fetchNews(parseInt(page) + 1)
+    }); 
+})
+router.addRoute('view', 'view.html', async (slug) => {
+    uiLoading('show');
+    const news = await serviceFetchNewsView(slug);
+    uiLoading('hide');
+    const title = document.querySelector('#title') 
+    const category = document.querySelector('#category') 
+    const photo = document.querySelector('#photo') 
+    const content = document.querySelector('#content') 
+    const published_date = document.querySelector('#published_date') 
+    const author = document.querySelector('#author') 
+
+    if (news) {
+        title.innerHTML = news.title;
+        category.innerHTML = news.category.name;
+        category.href = `#search?category=${news.category.slug}`;
+        photo.src = news.photo;
+        content.innerHTML = news.content;
+        published_date.innerHTML = moment(news.published_date).format('DD-MM-YYYY HH:mm');
+        author.innerHTML = news.author.fullname
+    }
 })
